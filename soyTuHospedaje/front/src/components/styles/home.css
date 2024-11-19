@@ -1,0 +1,14 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Ocupa toda la altura de la ventana
+    background-color: black;
+  }
+  
+  .logo {
+    max-width: 80%; // Ajusta el tamaño en pantallas pequeñas
+    max-height: 80%; // Evita que el logo sea demasiado grande
+    object-fit: contain; // Mantiene las proporciones del logo
+  }
+  
