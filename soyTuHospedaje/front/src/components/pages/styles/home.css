@@ -1,0 +1,13 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: black;
+}
+
+.logo {
+    max-width: 80%;
+    max-height: 80%; 
+    object-fit: contain;
+}
