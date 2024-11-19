@@ -1,13 +1,43 @@
 .home-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
     background-color: black;
 }
 
 .logo {
     max-width: 80%;
-    max-height: 80%; 
+    max-height: 80%;
     object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    text-decoration: none;
+}
+
+.button-image {
+    width: 150px;
+    /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    transition: transform 0.3s ease;
+    /* Animación suave */
+}
+
+.button-image:hover {
+    transform: scale(1.1);
+    /* Agranda la imagen al pasar el mouse */
+}
+
+.flags {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
