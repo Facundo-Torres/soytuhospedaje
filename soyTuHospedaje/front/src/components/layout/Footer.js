@@ -4,7 +4,9 @@ import '../layout/styles/footer.css';
 
 const Footer = () => {
   return (
+    
     <footer className="footer-container">
+      
       <div className="footer-info">
         
         <p>

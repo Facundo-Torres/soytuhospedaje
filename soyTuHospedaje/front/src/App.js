@@ -6,15 +6,15 @@ import Home from './components/pages/Home';
 import Footer from './components/layout/Footer';
 import Flag from './components/layout/Flag';
 
-
 function App() {
   return (
     <div className="App">
       
       <Home />
-     
-      <Flag />      
+      <Flag />
       <Footer />
+     
+      
 
     </div>
   );

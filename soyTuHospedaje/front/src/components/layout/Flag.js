@@ -5,13 +5,16 @@ import chileFlag from "../../assets/Chile.png";
 
 export default function Home() {
   return (
-    <div className="footer-flags">
-    <img src={argentinaFlag} alt="Bandera de Argentina" className="flag" />
-    <img src={chileFlag} alt="Bandera de Chile" className="flag" />
-  </div>
+    <div className="flags">
+      {/* Enlace a la página de Argentina */}
+      <a href="https://www.soybsas.com" target="_blank" rel="noopener noreferrer">
+        <img src={argentinaFlag} alt="Bandera de Argentina" className="flag" />
+      </a>
 
-
-
-
+      {/* Enlace a la página de Chile */}
+      <a href="https://www.soybsas.com" target="_blank" rel="noopener noreferrer">
+        <img src={chileFlag} alt="Bandera de Chile" className="flag" />
+      </a>
+    </div>
   );
 }
