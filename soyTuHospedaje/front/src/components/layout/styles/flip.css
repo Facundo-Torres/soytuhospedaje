@@ -12,8 +12,7 @@ h1, h4 {
 .flip {
     position: relative;
     display: inline-block;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
     width: 400px;
     border-radius: 10px;
     perspective: 1000px; /* Permite el efecto 3D */
@@ -40,13 +39,11 @@ h1, h4 {
     background-position: center !important;
     transform: rotateY(0deg);
     transition: transform 0.5s ease-in-out;
-  
 }
 .flip .back {
     background: #313131;
     transform: rotateY(-180deg);
     opacity: 0;
-
     transition: transform 0.5s ease-in-out, opacity 0.6s ease-in-out;
 }
 .flip:hover .front {
@@ -56,6 +53,64 @@ h1, h4 {
     transform: rotateY(0deg);
     opacity: 1;
 }
-.text-shadow {
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+
+
+/* Solución específica para móviles */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column !important; /* Apilar verticalmente */
+        align-items: center; /* Centrar tarjetas */
+       
+    }
+    .flip {
+        width: 100% !important; /* Ocupa todo el ancho del móvil */
+        max-width: 100%; /* Asegura que no exceda el contenedor */
+        aspect-ratio: 16/9; /* Mantiene proporción */
+        margin: 1rem 0; /* Separación entre tarjetas */
+        position: relative; /* Necesario para caras absolutas */
+        perspective: 1000px; /* Permite el efecto flip */
+        height: auto;
+    }
+    .flip .front,
+    .flip .back {
+        position: absolute; /* Superponen las caras */
+        top: 0;
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        height: auto; /* Ocupa toda la altura del contenedor */
+        backface-visibility: hidden; /* Oculta la cara trasera */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 10px; /* Bordes redondeados */
+    }
+    .flip .front {
+        background-size: cover; /* Ajusta imagen al contenedor */
+        background-position: center;
+        transform: rotateY(0deg); /* Inicialmente visible */
+        transition: transform 0.6s ease-in-out;
+        width: 100%;
+        height: auto;
+        position: inherit;
+    }
+    .flip .back {
+        background: #313131;
+        transform: rotateY(180deg); /* Inicialmente oculta */
+        transition: transform 0.6s ease-in-out;
+       
+    }
+    .flip:hover .front {
+        transform: rotateY(-180deg); /* Voltea la cara frontal */
+    }
+    .flip:hover .back {
+        transform: rotateY(0deg); /* Muestra la cara trasera */
+    }
+    .flip h1,
+    .flip h2,
+    .flip p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
 }
